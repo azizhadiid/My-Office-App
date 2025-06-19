@@ -1,103 +1,224 @@
+import Navbar from "@/components/Navabar";
+import CitiSections from "@/features/cities/sections/CitiSections";
+import FeachSpaceSections from "@/features/offices/sections/FeachSpaceSections";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Navbar />
+      <header className="flex flex-col w-full">
+        <section id="Hero-Banner" className="relative flex h-[720px] -mb-[93px]">
+          <div
+            id="Hero-Text"
+            className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] ml-[calc((100%-1130px)/2)] z-10"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <div className="flex items-center w-fit rounded-full py-2 px-4 gap-[10px] bg-[#000929]">
+              <img
+                src="/assets/images/icons/crown-white.svg"
+                className="w-5 h-5"
+                alt="icon"
+              />
+              <span className="font-semibold text-white">
+                We’ve won top productivity 500 fortunes
+              </span>
+            </div>
+            <h1 className="font-extrabold text-[50px] leading-[60px]">
+              All Great Offices.
+              <br />
+              Grow Your Business.
+            </h1>
+            <p className="text-lg leading-8 text-[#000929]">
+              Kantor yang tepat dapat memberikan impact pekerjaan menjadi lebih baik
+              dan sehat dalam tumbuhkan karir.
+            </p>
+            <div className="flex items-center gap-5">
+              <a
+                href="#"
+                className="flex items-center rounded-full p-[20px_26px] gap-3 bg-[#0D903A]"
+              >
+                <img
+                  src="/assets/images/icons/slider-horizontal-white.svg"
+                  className="w-[30px] h-[30px]"
+                  alt="icon"
+                />
+                <span className="font-bold text-xl leading-[30px] text-[#F7F7FD]">
+                  Explore Now
+                </span>
+              </a>
+              <a
+                href="#"
+                className="flex items-center rounded-full border border-[#000929] p-[20px_26px] gap-3 bg-white"
+              >
+                <img
+                  src="/assets/images/icons/video-octagon.svg"
+                  className="w-[30px] h-[30px]"
+                  alt="icon"
+                />
+                <span className="font-semibold text-xl leading-[30px]">
+                  Watch Story
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            id="Hero-Image"
+            className="absolute right-0 w-[calc(100%-((100%-1130px)/2)-305px)] h-[720px] rounded-bl-[40px] overflow-hidden"
+          >
+            <img
+              src="/assets/images/backgrounds/banner.webp"
+              className="w-full h-full object-cover"
+              alt="hero background"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+        </section>
+        <div className="flex flex-col pt-[150px] pb-10 px-[120px] gap-10 bg-[#0D903A]">
+          <div className="logo-contianer flex items-center justify-center flex-wrap max-w-[1130px] h-[38px] mx-auto gap-[60px]">
+            <img src="/assets/images/logos/TESLA.svg" alt="clients logo" />
+            <img src="/assets/images/logos/Libra 2.svg" alt="clients logo" />
+            <img src="/assets/images/logos/Binance logo.svg" alt="clients logo" />
+            <img src="/assets/images/logos/Facebook 7.svg" alt="clients logo" />
+            <img src="/assets/images/logos/Microsoft 6.svg" alt="clients logo" />
+          </div>
+          <div className="flex justify-center gap-[50px]">
+            <div className="flex flex-col gap-[2px] text-center">
+              <p className="text-xl leading-[30px] text-[#F7F7FD]">
+                Comfortable Space
+              </p>
+              <p className="font-bold text-[38px] leading-[57px] text-white">
+                580M+
+              </p>
+            </div>
+            <div className="flex flex-col gap-[2px] text-center">
+              <p className="text-xl leading-[30px] text-[#F7F7FD]">
+                Startups Succeed
+              </p>
+              <p className="font-bold text-[38px] leading-[57px] text-white">98%</p>
+            </div>
+            <div className="flex flex-col gap-[2px] text-center">
+              <p className="text-xl leading-[30px] text-[#F7F7FD]">Countries</p>
+              <p className="font-bold text-[38px] leading-[57px] text-white">90+</p>
+            </div>
+            <div className="flex flex-col gap-[2px] text-center">
+              <p className="text-xl leading-[30px] text-[#F7F7FD]">
+                Supportive Events
+              </p>
+              <p className="font-bold text-[38px] leading-[57px] text-white">
+                139M+
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </header>
+      <CitiSections />
+      <section
+        id="Benefits"
+        className="flex items-center justify-center w-[1015px] mx-auto gap-[100px] mt-[100px]"
+      >
+        <h2 className="font-bold text-[32px] leading-[48px] text-nowrap">
+          We Might Good <br />
+          For Your Business
+        </h2>
+        <div className="grid grid-cols-2 gap-[30px]">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
+              <img
+                src="/assets/images/icons/security-user.svg"
+                className="w-[34px] h-[34px]"
+                alt="icon"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px]">
+              <p className="font-bold text-lg leading-[27px]">
+                Privacy-First Design
+              </p>
+              <p className="text-sm leading-[24px]">
+                Lorem available without even higher tax that cost much
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
+              <img
+                src="/assets/images/icons/group.svg"
+                className="w-[34px] h-[34px]"
+                alt="icon"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px]">
+              <p className="font-bold text-lg leading-[27px]">Easy Move Access</p>
+              <p className="text-sm leading-[24px]">
+                Lorem available without even higher tax that cost much
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
+              <img
+                src="/assets/images/icons/3dcube.svg"
+                className="w-[34px] h-[34px]"
+                alt="icon"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px]">
+              <p className="font-bold text-lg leading-[27px]">Flexibility Spaces</p>
+              <p className="text-sm leading-[24px]">
+                Lorem available without even higher tax that cost much
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
+              <img
+                src="/assets/images/icons/cup.svg"
+                className="w-[34px] h-[34px]"
+                alt="icon"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px]">
+              <p className="font-bold text-lg leading-[27px]">Top-Rated Office</p>
+              <p className="text-sm leading-[24px]">
+                Lorem available without even higher tax that cost much
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
+              <img
+                src="/assets/images/icons/coffee.svg"
+                className="w-[34px] h-[34px]"
+                alt="icon"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px]">
+              <p className="font-bold text-lg leading-[27px]">
+                Extra Snacks Available
+              </p>
+              <p className="text-sm leading-[24px]">
+                Lorem available without even higher tax that cost much
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
+              <img
+                src="/assets/images/icons/home-trend-up.svg"
+                className="w-[34px] h-[34px]"
+                alt="icon"
+              />
+            </div>
+            <div className="flex flex-col gap-[5px]">
+              <p className="font-bold text-lg leading-[27px]">
+                Sustain for Business
+              </p>
+              <p className="text-sm leading-[24px]">
+                Lorem available without even higher tax that cost much
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <FeachSpaceSections />
+    </>
   );
 }
