@@ -1,15 +1,21 @@
+import Image from "next/image";
 import { OfficeSpace } from "../types/officeSpace.types";
+import Link from "next/link";
 
 const OfficeCard = ({ office }: { office: OfficeSpace }) => {
     return (
-        <a href="details.html" className="card">
+        <Link href={`/office/${office.slug}`} className="card">
             <div className="flex flex-col rounded-[20px] border border-[#E0DEF7] bg-white overflow-hidden">
                 <div className="thumbnail-container relative w-full h-[200px]">
-                    <p className="absolute top-5 left-5 w-fit rounded-full p-[6px_16px] bg-[#0D903A] font-bold text-sm leading-[21px] text-[#F7F7FD]">
-                        Popular
-                    </p>
-                    <img
-                        src="/assets/images/thumbnails/thumbnails-1.png"
+                    {office.tags.map((tag) => (
+                        <p key={tag} className="absolute top-5 left-5 w-fit rounded-full p-[6px_16px] bg-[#0D903A] font-bold text-sm leading-[21px] text-[#F7F7FD]">
+                            {tag}
+                        </p>
+                    ))}
+                    <Image
+                        src={office.image}
+                        width={400}
+                        height={200}
                         className="w-full h-full object-cover"
                         alt="thumbnails"
                     />
@@ -24,7 +30,9 @@ const OfficeCard = ({ office }: { office: OfficeSpace }) => {
                         </p>
                         <div className="flex items-center justify-end gap-[6px]">
                             <p className="font-semibold">20 days</p>
-                            <img
+                            <Image
+                                width={24}
+                                height={24}
                                 src="/assets/images/icons/clock.svg"
                                 className="w-6 h-6"
                                 alt="icon"
@@ -34,7 +42,9 @@ const OfficeCard = ({ office }: { office: OfficeSpace }) => {
                     <hr className="border-[#F6F5FD]" />
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-end gap-[6px]">
-                            <img
+                            <Image
+                                width={24}
+                                height={24}
                                 src="/assets/images/icons/location.svg"
                                 className="w-6 h-6"
                                 alt="icon"
@@ -43,7 +53,9 @@ const OfficeCard = ({ office }: { office: OfficeSpace }) => {
                         </div>
                         <div className="flex items-center justify-end gap-[6px]">
                             <p className="font-semibold">{office.rating}/5</p>
-                            <img
+                            <Image
+                                width={24}
+                                height={24}
                                 src="/assets/images/icons/Star 1.svg"
                                 className="w-6 h-6"
                                 alt="icon"
@@ -53,25 +65,29 @@ const OfficeCard = ({ office }: { office: OfficeSpace }) => {
                     <hr className="border-[#F6F5FD]" />
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-end gap-[6px]">
-                            <img
+                            <Image
+                                width={24}
+                                height={24}
                                 src="/assets/images/icons/wifi.svg"
                                 className="w-6 h-6"
                                 alt="icon"
                             />
-                            <p className="font-semibold">Fast-Connection</p>
+                            <p className="font-semibold">{office.features[0]}</p>
                         </div>
                         <div className="flex items-center justify-end gap-[6px]">
-                            <img
+                            <Image
+                                width={24}
+                                height={24}
                                 src="/assets/images/icons/security-user.svg"
                                 className="w-6 h-6"
                                 alt="icon"
                             />
-                            <p className="font-semibold">Secure 100%</p>
+                            <p className="font-semibold">{office.features[1]}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };
 
