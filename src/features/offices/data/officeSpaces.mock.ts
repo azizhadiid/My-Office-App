@@ -35,7 +35,7 @@ export const officeSpaces: OfficeSpace[] = [
     {
         id: 2,
         title: 'Kantor Sazs',
-        slug: 'kantor&sazs',
+        slug: 'kantor-sazs',
         price: 18560000,
         duration: '15 days',
         location: 'Bandung',
