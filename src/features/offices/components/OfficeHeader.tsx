@@ -1,36 +1,44 @@
-const OfficeHeader = () => {
+"use client"
+
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+const OfficeHeader = ({ image, images }: { image: string; images: string[]; }) => {
     return (
         <section id="Gallery" className="-mb-[50px]">
             <div className="swiper w-full">
-                <div className="swiper-wrapper">
-                    <div className="swiper-slide !w-fit">
+                <Swiper
+                    className="swiper-wrapper"
+                    slidesPerView="auto"
+                >
+
+                    <SwiperSlide className="swiper-slide !w-fit">
                         <div className="w-[700px] h-[550px] overflow-hidden">
-                            <img
-                                src="/assets/images/thumbnails/thumbnail-details-1.png"
+                            <Image
+                                src={image}
+                                width={700}
+                                height={550}
                                 className="w-full h-full object-cover"
                                 alt="thumbnail"
                             />
                         </div>
-                    </div>
-                    <div className="swiper-slide !w-fit">
-                        <div className="w-[700px] h-[550px] overflow-hidden">
-                            <img
-                                src="/assets/images/thumbnails/thumbnail-details-2.png"
-                                className="w-full h-full object-cover"
-                                alt="thumbnail"
-                            />
-                        </div>
-                    </div>
-                    <div className="swiper-slide !w-fit">
-                        <div className="w-[700px] h-[550px] overflow-hidden">
-                            <img
-                                src="/assets/images/thumbnails/thumbnail-details-3.png"
-                                className="w-full h-full object-cover"
-                                alt="thumbnail"
-                            />
-                        </div>
-                    </div>
-                </div>
+                    </SwiperSlide>
+
+                    {images.map((img, index) => (
+                        <SwiperSlide key={index} className="swiper-slide !w-fit">
+                            <div className="w-[700px] h-[550px] overflow-hidden">
+                                <Image
+                                    src="/assets/images/thumbnails/thumbnail-details-1.png"
+                                    width={700}
+                                    height={550}
+                                    className="w-full h-full object-cover"
+                                    alt="thumbnail"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+
+                </Swiper>
             </div>
         </section>
     );
