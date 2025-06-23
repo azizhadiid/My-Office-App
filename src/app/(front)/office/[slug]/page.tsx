@@ -7,11 +7,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Props = {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 };
 
-export default function OfficeSpaceDetailPage({ params }: Props) {
-    const office = officeSpaces.find((item) => item.slug === params.slug);
+export default async function OfficeSpaceDetailPage({ params }: Props) {
+    const { slug } = await params;
+
+    const office = officeSpaces.find((item) => item.slug === slug);
 
     if (!office) return notFound();
 
@@ -182,7 +184,8 @@ export default function OfficeSpaceDetailPage({ params }: Props) {
                                 </button>
                             ) : (
                                 <a
-                                    href="booking.html"
+                                    target="_blank"
+                                    href="/"
                                     className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]"
                                 >
                                     <Image

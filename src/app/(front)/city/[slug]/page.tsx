@@ -6,11 +6,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Props = {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 };
 
-const CitiySpaceDetail = ({ params }: Props) => {
-    const city = cities.find((c) => c.slug === params.slug);
+const CitiySpaceDetail = async ({ params }: Props) => {
+    const { slug } = await params;
+
+    const city = cities.find((c) => c.slug === slug);
 
     if (!city) return notFound();
 
