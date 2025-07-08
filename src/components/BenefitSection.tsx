@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const BenefitSection = () => {
     return (
         <section
@@ -11,10 +13,12 @@ const BenefitSection = () => {
             <div className="grid grid-cols-2 gap-[30px]">
                 <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
-                        <img
+                        <Image
                             src="/assets/images/icons/security-user.svg"
                             className="w-[34px] h-[34px]"
                             alt="icon"
+                            width={34}
+                            height={34}
                         />
                     </div>
                     <div className="flex flex-col gap-[5px]">
@@ -28,7 +32,9 @@ const BenefitSection = () => {
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
-                        <img
+                        <Image
+                            width={34}
+                            height={34}
                             src="/assets/images/icons/group.svg"
                             className="w-[34px] h-[34px]"
                             alt="icon"
@@ -43,7 +49,9 @@ const BenefitSection = () => {
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
-                        <img
+                        <Image
+                            width={34}
+                            height={34}
                             src="/assets/images/icons/3dcube.svg"
                             className="w-[34px] h-[34px]"
                             alt="icon"
@@ -58,7 +66,9 @@ const BenefitSection = () => {
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
-                        <img
+                        <Image
+                            width={34}
+                            height={34}
                             src="/assets/images/icons/cup.svg"
                             className="w-[34px] h-[34px]"
                             alt="icon"
@@ -73,7 +83,9 @@ const BenefitSection = () => {
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
-                        <img
+                        <Image
+                            width={34}
+                            height={34}
                             src="/assets/images/icons/coffee.svg"
                             className="w-[34px] h-[34px]"
                             alt="icon"
@@ -90,7 +102,9 @@ const BenefitSection = () => {
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center shrink-0 w-[70px] h-[70px] rounded-[23px] bg-white overflow-hidden">
-                        <img
+                        <Image
+                            width={34}
+                            height={34}
                             src="/assets/images/icons/home-trend-up.svg"
                             className="w-[34px] h-[34px]"
                             alt="icon"

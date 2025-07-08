@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Header = () => {
     return (
         <header className="flex flex-col w-full">
@@ -7,10 +9,12 @@ const Header = () => {
                     className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] ml-[calc((100%-1130px)/2)] z-10"
                 >
                     <div className="flex items-center w-fit rounded-full py-2 px-4 gap-[10px] bg-[#000929]">
-                        <img
+                        <Image
                             src="/assets/images/icons/crown-white.svg"
                             className="w-5 h-5"
                             alt="icon"
+                            width={20}
+                            height={20}
                         />
                         <span className="font-semibold text-white">
                             We’ve won top productivity 500 fortunes
@@ -30,10 +34,12 @@ const Header = () => {
                             href="#"
                             className="flex items-center rounded-full p-[20px_26px] gap-3 bg-[#0D903A]"
                         >
-                            <img
+                            <Image
                                 src="/assets/images/icons/slider-horizontal-white.svg"
                                 className="w-[30px] h-[30px]"
                                 alt="icon"
+                                width={30}
+                                height={30}
                             />
                             <span className="font-bold text-xl leading-[30px] text-[#F7F7FD]">
                                 Explore Now
@@ -43,10 +49,12 @@ const Header = () => {
                             href="#"
                             className="flex items-center rounded-full border border-[#000929] p-[20px_26px] gap-3 bg-white"
                         >
-                            <img
+                            <Image
                                 src="/assets/images/icons/video-octagon.svg"
                                 className="w-[30px] h-[30px]"
                                 alt="icon"
+                                width={30}
+                                height={30}
                             />
                             <span className="font-semibold text-xl leading-[30px]">
                                 Watch Story
@@ -58,20 +66,22 @@ const Header = () => {
                     id="Hero-Image"
                     className="absolute right-0 w-[calc(100%-((100%-1130px)/2)-305px)] h-[720px] rounded-bl-[40px] overflow-hidden"
                 >
-                    <img
+                    <Image
                         src="/assets/images/backgrounds/banner.webp"
                         className="w-full h-full object-cover"
                         alt="hero background"
+                        fill
+                        priority
                     />
                 </div>
             </section>
             <div className="flex flex-col pt-[150px] pb-10 px-[120px] gap-10 bg-[#0D903A]">
                 <div className="logo-contianer flex items-center justify-center flex-wrap max-w-[1130px] h-[38px] mx-auto gap-[60px]">
-                    <img src="/assets/images/logos/TESLA.svg" alt="clients logo" />
-                    <img src="/assets/images/logos/Libra 2.svg" alt="clients logo" />
-                    <img src="/assets/images/logos/Binance logo.svg" alt="clients logo" />
-                    <img src="/assets/images/logos/Facebook 7.svg" alt="clients logo" />
-                    <img src="/assets/images/logos/Microsoft 6.svg" alt="clients logo" />
+                    <Image src="/assets/images/logos/TESLA.svg" alt="clients logo" width={100} height={40} />
+                    <Image src="/assets/images/logos/Libra 2.svg" alt="clients logo" width={100} height={40} />
+                    <Image src="/assets/images/logos/Binance logo.svg" alt="clients logo" width={100} height={40} />
+                    <Image src="/assets/images/logos/Facebook 7.svg" alt="clients logo" width={100} height={40} />
+                    <Image src="/assets/images/logos/Microsoft 6.svg" alt="clients logo" width={100} height={40} />
                 </div>
                 <div className="flex justify-center gap-[50px]">
                     <div className="flex flex-col gap-[2px] text-center">
